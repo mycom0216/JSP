@@ -9,40 +9,32 @@
 <body>
 
 	<%
-		// JSP¿¡¼­´Â scope¿µ¿ª °´Ã¼°¡ ÀüºÎ ³»Àå°´Ã¼·Î Á¸ÀçÇÑ´Ù.
-		// scope¿µ¿ª ¾È¿¡ µé¾îÀÖ´Â µ¥ÀÌÅÍ ²¨³»¿À´Â °øÅë ¸Þ¼Òµå
-		// getAttribute("name°ª");
-		// >> return typeÀº ObjectÇü½Ä
+		// JSPì—ì„œëŠ” scopeì˜ì—­ ê°ì²´ê°€ ì „ë¶€ ë‚´ìž¥ê°ì²´ë¡œ ì¡´ìž¬í•œë‹¤.
+		// scopeì˜ì—­ ì•ˆì— ë“¤ì–´ìžˆëŠ” ë°ì´í„° êº¼ë‚´ì˜¤ëŠ” ê³µí†µ ë©”ì†Œë“œ
+		// getAttribute("nameê°’");
+		// >> return typeì€ Objectí˜•ì‹
 				
-		// 1. request ¿µ¿ª¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ ²¨³»¿À±â
+		// 1. request ì˜ì—­ì— ì €ìž¥ëœ ë°ì´í„° êº¼ë‚´ì˜¤ê¸°
 		String data1 = (String)request.getAttribute("request");
 	
-		// 2. session ¿µ¿ª¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ ²¨³»¿À±â
+		// 2. session ì˜ì—­ì— ì €ìž¥ëœ ë°ì´í„° êº¼ë‚´ì˜¤ê¸°
 		String data2 = (String)session.getAttribute("session");
 	
-		// 3. application ¿µ¿ª¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ ²¨³»¿À±â
+		// 3. application ì˜ì—­ì— ì €ìž¥ëœ ë°ì´í„° êº¼ë‚´ì˜¤ê¸°
 		String data3 = (String)application.getAttribute("application");
 		
-		// 4. page ¿µ¿ª »ç¿ëÇÏ´Â ¹æ¹ý
-		// 4-1) µ¥ÀÌÅÍ ³Ö±â
-		pageContext.setAttribute("page", "page¿µ¿ª¿¡ °ª ÀúÀå");
-		// 4-2) µ¥ÀÌÅÍ ²¨³»¿À±â
+		// 4. page ì˜ì—­ ì‚¬ìš©í•˜ëŠ” ë°©ë²•
+		// 4-1) ë°ì´í„° ë„£ê¸°
+		pageContext.setAttribute("page", "pageì˜ì—­ì— ê°’ ì €ìž¥");
+		// 4-2) ë°ì´í„° êº¼ë‚´ì˜¤ê¸°
 		String data4 = (String)pageContext.getAttribute("page");
-		// ---> ÇØ´çÇÏ´Â ¿µ¿ªÀº µü jsp³»ºÎ¿¡¼­¸¸ »ç¿ë °¡´ÉÇÏ´Ù
-		// ---> ±× ¿ÜÀÇ ÆäÀÌÁö·Î´Â ¹þ¾î³¯ ¼ö ¾ø´Ù
+		// ---> í•´ë‹¹í•˜ëŠ” ì˜ì—­ì€ ë”± jspë‚´ë¶€ì—ì„œë§Œ ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤
+		// ---> ê·¸ ì™¸ì˜ íŽ˜ì´ì§€ë¡œëŠ” ë²—ì–´ë‚  ìˆ˜ ì—†ë‹¤
 	%>
 
 	<%=data1 %>
 	<%=data2 %>
 	<%=data3 %>
-
-
-
-
-
-
-
-
 
 </body>
 </html>
