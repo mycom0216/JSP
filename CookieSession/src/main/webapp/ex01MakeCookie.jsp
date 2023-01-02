@@ -9,12 +9,12 @@
 <body>
 	
 	<%
-		// 1. ÄíÅ° µ¥ÀÌÅÍ ²¨³»¿À±â
+		// 1. ì¿ í‚¤ ë°ì´í„° êº¼ë‚´ì˜¤ê¸°
 		Cookie[] cookies = request.getCookies();
-		// >> ÇÏ³ªÀÇ ÄíÅ° ¾È¿¡ ¿©·¯°³ÀÇ µ¥ÀÌÅÍ°¡ ÀúÀåµÉ ¼ö ÀÖ±â ¶§¹®¿¡ ¹è¿­·Î µÇµ¹·ÁÁØ´Ù
-		// 2. ¾ÈÂÊ¿¡ ÀÖ´Â µ¥ÀÌÅÍ ²¨³»¿À±â
+		// >> í•˜ë‚˜ì˜ ì¿ í‚¤ ì•ˆì— ì—¬ëŸ¬ê°œì˜ ë°ì´í„°ê°€ ì €ìž¥ë  ìˆ˜ ìžˆê¸° ë•Œë¬¸ì— ë°°ì—´ë¡œ ë˜ëŒë ¤ì¤€ë‹¤
+		// 2. ì•ˆìª½ì— ìžˆëŠ” ë°ì´í„° êº¼ë‚´ì˜¤ê¸°
 		// String name = cookies[1].getValue();
-		// ---> ÄíÅ°¾È¿¡¼­ µ¥ÀÌÅÍ¸¦ Á¤È®ÇÏ°Ô »Ì¾Æ¿À°í ½ÍÀ» ¶§´Â º°µµÀÇ ·ÎÁ÷ ÀÛ¼ºÀÌ ÇÊ¿äÇÏ´Ù.
+		// ---> ì¿ í‚¤ì•ˆì—ì„œ ë°ì´í„°ë¥¼ ì •í™•í•˜ê²Œ ë½‘ì•„ì˜¤ê³  ì‹¶ì„ ë•ŒëŠ” ë³„ë„ì˜ ë¡œì§ ìž‘ì„±ì´ í•„ìš”í•˜ë‹¤.
 		String name = "";
 		for(int i = 0; i < cookies.length; i++){
 			if(cookies[i].getName().equals("data")){
@@ -24,17 +24,6 @@
 	%>
 	
 	<%=name %>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 </body>
