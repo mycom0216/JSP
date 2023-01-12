@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;MessageSystem/src/main/java/com.smhrd.db&apos;&#x0D;&#x0A;- Original project: &apos;MavenTest&apos;&#x0D;&#x0A;- Destination element: &apos;MessageSystem/src/main/java/com.smhrd.db&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     mybatis-config.xml&#x0D;&#x0A;     SqlSessionManager.java" description="Copy files" destination="=MessageSystem/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.smhrd.db" element1="src/main/java/com/smhrd/database/mybatis-config.xml" element2="src/main/java/com/smhrd/database/SqlSessionManager.java" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1673243583077" units="0" version="1.0"/>
+</session>

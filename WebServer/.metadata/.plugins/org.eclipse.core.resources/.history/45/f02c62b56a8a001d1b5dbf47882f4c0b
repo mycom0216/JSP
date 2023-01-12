@@ -1,0 +1,46 @@
+package Scope;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/MakeScope")
+public class ex01MakeScope extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+		
+		// scope영역에 데이터 저장 공통 메소드
+		// setAttribute("name값",Object 데이터);
+		
+		// 1. request 영역에 데이터 저장
+		request.setAttribute("request", "request영역에 저장");
+		
+		// 2. session 영역에 데이터 저장
+		request.getSession().setAttribute("session", "session영역에 저장");
+		
+		// 3. application 영역에 데이터 저장
+		request.getServletContext().setAttribute("application", "application영역에 저장");
+		
+		// 4. ex01MakeScope.jsp로 forward방식으로 이동
+		// ---> request scope를 유지시키기 위해서
+		request.getRequestDispatcher("ex01MakeScope.jsp");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

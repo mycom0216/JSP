@@ -1,0 +1,75 @@
+package com.smhrd.model;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.smhrd.db.SqlSessionManager;
+
+public class MessageDAO {
+	// 필드 ---< 공장 꺼내오기
+	private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
+	
+	
+	
+	
+	public int join(MessageDTO dto) {
+		int row = 0;
+		// 1. sqlSession열어주기
+		SqlSession session = sqlSessionFactory.openSession(true);
+		try {
+		// 2. session사용해서 insert 진행
+		row = session.insert("com.smhrd.model.MessageDAO.join", dto);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			// 3. 자원반납
+			session.close();
+		}
+		// 4. 결과값 반환
+		return row;
+	}
+
+
+
+
+	public MessageDTO login(MessageDTO dto) {
+		MessageDTO result = null;
+		// 1. sqlSession열어주기
+		SqlSession session = sqlSessionFactory.openSession(true);
+		try {
+			// 2. session사용해서 select 실행하기
+			result = session.selectOne("com.smhrd.model.MessageDAO.login", dto);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			// 3. 자원반납
+			session.close();
+		}
+		// 4. 결과값 반환
+		return result;
+	}
+
+
+
+
+	public int update(MessageDTO dto) {
+		int row = 0;
+		// 1. sqlsession 열어주기
+		SqlSession session = sqlSessionFactory.openSession(true);
+		// 2. session 사용해서 update 작업 진행하기
+		try {
+			 row = session.update("com.smhrd.model.MessageDAO.update", dto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			// 3. 자원반납
+			session.close();
+		}
+		
+		// 4. 결과값 반환
+		return row;
+		
+		
+	}
+	
+}

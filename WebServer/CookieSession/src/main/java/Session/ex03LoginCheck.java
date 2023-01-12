@@ -1,0 +1,43 @@
+package Session;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
+@WebServlet("/LoginCheck")
+public class ex03LoginCheck extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+		// 1. 요청받은 데이터 꺼내오기(id,pw)
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		// 2. 받아온 데이터가 test, 12345 일치하는지 비교하기
+		if(id.equals("test") && pw.equals("12345")) {
+		
+		// 3. 일치한다면 session을 생성, "쿠키몬스터" 데이터 저장
+		HttpSession session =  request.getSession();
+		session.setAttribute("nick", "쿠키몬스터");
+		// 4. Main.jsp로 이동
+		response.sendRedirect("ex03Main.jsp");
+		} else {
+		// 5. 일치하지 않는다면 ex03LoginForm.jsp로 이동
+		response.sendRedirect("ex03LoginForm.jsp");
+		}
+		
+		
+		
+		
+		
+	}
+
+}
